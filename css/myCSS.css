@@ -1,0 +1,31 @@
+#main{
+	margin-top: 50px;
+}
+
+#col_left{
+	padding-top: 30px;
+}
+
+a{
+	text-decoration: none !important;
+}
+
+label{
+	font-weight: 500;
+}
+
+#footer{
+	width: 100%;
+	padding: 20px 0px 10px 0px;
+	color: #fff;
+	background: #4A4949;
+}
+
+.modal-content img{
+	width: 100% !important;
+	height: auto !important;
+}
+
+.content-main{
+	min-height: 800px;
+}

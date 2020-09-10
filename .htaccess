@@ -21,9 +21,9 @@
 
 
     # Protect .env
-    <Files ~ "\.(env|env.example|json|config.js|md|gitignore|gitattributes|lock)$">
-    Order Allow,Deny
-    Deny from all
+        <Files ~ "\.(env|env.example|json|config.js|md|gitignore|gitattributes|lock)$">
+        Order Allow,Deny
+        Deny from all
     </Files>
     
 </IfModule>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Models\News;
 
 class NewsControllder extends Controller
@@ -115,6 +116,7 @@ class NewsControllder extends Controller
      */
     public function edit($id)
     {
+        Log::info('Showing user profile for user: '.$id);
         $news = News::find($id);
         return view('backend.pages.News.edit_news', ['news' => $news]);
     }

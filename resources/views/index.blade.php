@@ -18,6 +18,7 @@
 
   <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link rel="stylesheet" href="css/cssLogin.css" />
+  <script src='https://www.google.com/recaptcha/api.js'></script>
   
 </head>
 

@@ -23,6 +23,12 @@ Route::get('/', function(){
 Route::post('/', 'UserController@post_login')->name('post-login');
 Route::get('logout', 'UserController@logout')->name('logout');
 
+// Test connection database: laravel_testv2
+Route::get('data', function(){
+    $rs = DB::connection('mysql2')->table('tbl_data')->get();
+    dd($rs);
+});
+
 Route::group(['prefix' => 'backend'], function(){
 
     Route::get('/', function () {

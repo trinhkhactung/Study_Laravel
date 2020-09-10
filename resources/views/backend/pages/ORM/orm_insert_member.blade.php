@@ -4,7 +4,7 @@
 
 	<form action="{{ route('orm_insert_member') }}" method="POST" role="form">
 		<legend>Thêm mới học viên</legend>
-		@include('notification.noti_status')
+		@include('backend.notification.noti_status')
 
 		@if(count($errors))
 			@foreach ($errors->all() as $err)

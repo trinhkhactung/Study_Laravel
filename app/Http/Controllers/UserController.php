@@ -10,10 +10,10 @@ class UserController extends Controller
 {
     public function post_login(Request $request){
     	$arrCheck = 
-    		[
-    			'email' 	   => $request->username, 
-	    		'password'     => $request->passw
-	    	];
+		[
+			'email' 	   => $request->username, 
+    		'password'     => $request->passw
+    	];
 
     	if (Auth::attempt($arrCheck)) {
 		   return redirect(route('index'));

@@ -12,20 +12,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Học laravel quá đơn giản khi bạn đã nắm cơ chắc về PHP thuần, MVC...">
         <meta name="author" content="Tung TK">
-        
-        <base href="{{ asset('') }}" />
+
         <link rel="icon" href="https://user-images.githubusercontent.com/15979712/27070335-deffe080-5018-11e7-82e8-2a299cb9e99b.png">
         <title>LARAVEL STUDY DEMO</title>
     
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
         <!-- Custom styles for this template -->
-        <link href="css/myCSS.css" rel="stylesheet">
+        <link href="{{asset('css/myCSS.css')}}" rel="stylesheet">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
         <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
         <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
-        <script src="ckd/ckeditor.js"></script>
-        <script src="ckf/ckfinder.js"></script>
+        <script src="{{asset('ckd/ckeditor.js')}}"></script>
+        <script src="{{asset('ckf/ckfinder.js')}}"></script>
+        @yield('css_by_page')
     </head>
     <body>
         
@@ -53,10 +53,14 @@
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="js/jquery-3.3.1.slim.min.js"></script>
-        <script src="js/jquery.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/myJavascript.js"></script>
+        <script src="{{asset('js/jquery-3.3.1.slim.min.js')}}"></script>
+        <script src="{{asset('js/jquery.js')}}"></script>
+        <script src="{{asset('js/popper.min.js')}}"></script>
+        <script src="{{asset('js/bootstrap.min.js')}}"></script>
+        <script>
+            var urlApp = '{{ env('APP_URL_CKFINDER') }}';
+        </script>
+        <script src="{{asset('js/myJavascript.js')}}"></script>
+        @yield('js_by_page')
     </body>
 </html>

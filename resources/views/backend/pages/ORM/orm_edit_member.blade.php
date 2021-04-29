@@ -1,7 +1,7 @@
 @extends('backend.index')
 
 @section('content')
-	<form action="{{ route('orm_edit_member', $member->id) }}" method="POST" role="form">
+	<form action="{{ route('orm_update_member', $member->id) }}" method="POST" role="form">
 		<legend>Sửa thông tin học viên <span><a href="{{ route('dqb_list_member') }}"><button class="btn btn-warning">Quay lại</button></span></a></legend>
 	
 		<div class="form-group">

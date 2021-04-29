@@ -67,9 +67,14 @@ Route::group(['prefix' => 'backend'], function(){
             $email = $request->email;
             $phone = $request->phone;
             $addres = $request->addres;
+            try {
+                DB::insert('INSERT INTO member (name, id_faculty, email, phone, addres) values (:name, :id_faculty, :email, :phone, :addres)', ['name' => $name, 'id_faculty' => $id_faculty, 'email' => $email, 'phone' => $phone, 'addres' => $addres]);
+                return redirect()->route('db_list_member')->with('noti', 'Thêm mới thành công!');
+            } catch (Throwable $e) {
+                return redirect()->route('db_list_member')->with('noti', 'Lỗi thêm mới email hoặc SĐT đã tồn tại!');
+            }
 
-            DB::insert('INSERT INTO member (name, id_faculty, email, phone, addres) values (:name, :id_faculty, :email, :phone, :addres)', ['name' => $name, 'id_faculty' => $id_faculty, 'email' => $email, 'phone' => $phone, 'addres' => $addres]);
-            return redirect()->route('db_list_member')->with('noti', 'Thêm mới thành công!');
+
         })->name('post_db_add_member');
 
         Route::get('edit-member/{id}', function($id) {
@@ -348,7 +353,7 @@ Route::group(['prefix' => 'backend'], function(){
                 'addres'        =>      $request->addres
             ]);
             return redirect(route('orm_list_member'))->with('noti', 'Cập nhật thành công!');
-        })->name('orm_edit_member');
+        })->name('orm_update_member');
 
         Route::post('list-member', function(Request $request){
             $key = $request->key;

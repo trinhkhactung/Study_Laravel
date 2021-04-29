@@ -82,7 +82,7 @@ class NewsControllder extends Controller
 
             $add->status              =     $request->status;
             $add->save();
-            $file->move('images/news/', $nameFile);
+            $file->move('media/news/', $nameFile);
             return redirect(route('news.index'))->with('noti', 'Thêm bài viết thành công!');
             
         } catch (Exception $e) {

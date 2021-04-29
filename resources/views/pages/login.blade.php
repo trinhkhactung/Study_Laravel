@@ -11,8 +11,8 @@
 
 <!-- Login Form -->
 <form action="" method="POST">
-	<input type="email" required="" id="login" class="fadeIn second" name="username" placeholder="username">
-	<input type="password" required="" id="password" class="fadeIn third" name="passw" placeholder="password">
+	<input type="email" required="" id="login" class="fadeIn second" name="username" value="admin@gmail.com" placeholder="username">
+	<input type="password" required="" id="password" class="fadeIn third" value="123456" name="passw" placeholder="password">
 
 
 	<input type="hidden" name="_token" value="{{ csrf_token('') }}" />
